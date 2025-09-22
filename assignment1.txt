@@ -1,0 +1,86 @@
+Assignment 1 – Introduction to Linux Basic Commands
+Student ID: 25626
+Name: Ajibewa Johnson Irekanmi
+
+---------------------------------------------------
+Q1: If you are in the P3 directory, go to your home
+
+1. Relative path:
+cd ~
+(see screenshots/q1_relative.png)
+
+2. Absolute path:
+cd /home/irekanmi
+(see screenshots/q1_absolute.png)
+
+---------------------------------------------------
+Q2: Show a long listing of Here
+
+1. Relative path (if in Command directory):
+ls -l ../Here
+(see screenshots/q2_relative.png)
+
+2. Absolute path:
+ls -l /home/irekanmi/Here
+(see screenshots/q2_absolute.png)
+
+---------------------------------------------------
+Q3: Copy the file P3 to the Command directory
+
+- From P2:
+cp ../P3/P3 ../Command/
+(see screenshots/q3_fromP2.png)
+
+- From P3:
+cp P3 ../Command/
+(see screenshots/q3_fromP3.png)
+
+- From Command:
+cp ../P3/P3 .
+(see screenshots/q3_fromCommand.png)
+
+- Absolute path:
+cp /home/irekanmi/P3/P3 /home/irekanmi/Command/
+(see screenshots/q3_fromAbsolute.png)
+
+---------------------------------------------------
+Q4: Copy the files in P3 to the Command directory
+
+- From P2:
+cp ../P3/* ../Command/
+(see screenshots/q4_fromP2.png)
+
+- From P3:
+cp * ../Command/
+(see screenshots/q4_fromP3.png)
+
+- From Command:
+cp ../P3/* .
+(see screenshots/q4_fromCommand.png)
+
+- Absolute path:
+cp /home/irekanmi/P3/* /home/irekanmi/Command/
+(see screenshots/q4_fromAbsolute.png)
+
+---------------------------------------------------
+Q5: Difference between Q3 and Q4
+
+Q3 copies a single file named "P3".  
+Q4 copies all files inside the P3 directory.
+
+---------------------------------------------------
+Q6: Colors in Linux terminal
+
+To check colors of files and directories, I ran:
+
+ls --color=auto -l ~
+
+Explanation of colors:
+- **Blue** → Directory  
+- **Green/Yellow** → Executable files  
+- **White** → Regular files  
+
+For example:
+- `hereWeAre` appears **blue** if it is a directory.  
+- If `hereWeAre` is an executable file, it will appear **green/yellow**.  
+
