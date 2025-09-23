@@ -10,10 +10,10 @@ Introduction to Linux Basic commands assignment. The file structure referenced i
 
 From the P3 directory, using a relative path:
 cd ../../../
-This command uses .. to move up one directory level. From P3, you need to go up three levels to reach your home directory (mcbishop in the example).
+This command uses .. to move up one directory level. From P3, you need to go up three levels to reach your home directory (olive in the as changed mcbishop).
 
 From the P3 directory, using an absolute path:
-cd /home/mcbishop
+cd /home/olive
 This command uses the full path from the root directory (/) to go directly to the home directory. The path will work from any location.
 
 
@@ -27,7 +27,7 @@ ls -l ../P1/Hi/Hello/P3/Here
 The ls -l command lists file and directory information in a long format. Starting from Command, ../ moves up to Practice, and the rest of the path is followed to reach the Here directory.
 
 Using an absolute path:
-ls -l /home/mcbishop/Practice/P1/Hi/Hello/P3/Here
+ls -l /home/olive/practice/P1/Hi/Hello/P3/Here
 This command uses the full path from the root directory to list the contents of Here.
 
 
@@ -37,16 +37,16 @@ This command uses the full path from the root directory to list the contents of 
 3. Copying the P3 Directory
 
 From the P2 directory:
-cp -r ../P1/Hi/Hello/P3 ../Command
+cp -r ../P1/Hi/Hello/P3 ../command
 
 From the P3 directory:
-cp -r . ../../../Command
+cp -r . ../../../command
 
 From the Command directory:
 cp -r ../P1/Hi/Hello/P3 .
 
 Using an absolute path:
-cp -r /home/mcbishop/Practice/P1/Hi/Hello/P3 /home/mcbishop/Practice/Command
+cp -r /home/olive/practice/P1/Hi/Hello/P3 /home/olive/practice/command
 The cp -r command copies a directory and its entire contents recursively.
 
 
@@ -59,13 +59,13 @@ From the P2 directory:
 cp ../P1/Hi/Hello/P3/* ../Command/
 
 From the P3 directory:
-cp * ../../../Command/
+cp * ../../../command/
 
 From the Command directory:
 cp ../P1/Hi/Hello/P3/* .
 
 Using an absolute path:
-cp /home/mcbishop/Practice/P1/Hi/Hello/P3/* /home/mcbishop/Practice/Command/
+cp /home/olive/practice/P1/Hi/Hello/P3/* /home/olive/practice/command/
 This command copies only the files from the source directory using the * wildcard.
 
 
