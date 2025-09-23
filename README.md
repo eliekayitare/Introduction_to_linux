@@ -1,4 +1,4 @@
-# BIZIMANA Olivier (27582)
+
 ## INTRODUCTION TO LINUX
 
 ### What I did
