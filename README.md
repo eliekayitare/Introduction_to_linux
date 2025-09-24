@@ -42,7 +42,7 @@
 
 \### Branch Management
 
-3\. \*\*Created a new branch\*\* following the naming convention: `23235\_munyarukina\_abel\_assignment1`
+3\. \*\*Created a new branch\*\* following the naming convention: `23235_munyarukina_abel_assignment1`
 
 4\. \*\*Worked exclusively on my branch\*\* to avoid conflicts with main branch
 
@@ -321,32 +321,4 @@
 &nbsp;   └── q6\_colors.png
 
 ```
-
-
-
----
-
-
-
-
-
-\## Contact Information
-
-
-
-\*\*Student:\*\* Munyarukina Abel  
-
-\*\*Student ID:\*\* 23235  
-
-\*\*Email:\*\* \[Your email if needed]  
-
-\*\*Branch:\*\* `23235\_munyarukina\_abel\_assignment1`  
-
-
-
----
-
-
-
-\*This assignment helped me build a solid foundation in Linux command line operations and proper documentation practices. The hands-on experience with real directory structures was invaluable for understanding how these commands work in practice.\*
 
