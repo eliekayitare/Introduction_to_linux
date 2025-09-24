@@ -1,31 +1,37 @@
-# Introduction_to_linux
-# Assignment 1 – Introduction to Linux Basic Commands
 
-## Student Info
-- Name: Ndayizeye Steven
-- Student ID: 27165
-- Course: COSC 8312
+**Name:** Ineza Agape 
+**ID:** 27464 
 
----
+#Branch: 27464_ineza_agape_assignment1  
+
+
 
 ## What I Did
-1. Cloned the repository from GitHub.
-2. Created a branch using the required format (`27165_Ndayizeye_steven_assignment1`).
-3. Solved the Linux conceptual questions by writing commands and explanations.
-4. Took screenshots of commands and their outputs.
-5. Pushed my work to my own branch (not the main branch).
+- Cloned the repo and created a branch. 
+- Created the **test** directory structure with required subfolders. 
+- Added files: `info`, `Hello`, and `hereWeAre`. 
+- Wrote answers in `assignment1.txt`. 
+- Took screenshots of cloning, branching, directory tree, and answers. 
 
 ---
 
 ## Why I Did It
-- To practice **basic Linux navigation, file handling, and path concepts**.
-- To learn how to use **relative vs absolute paths**.
-- To strengthen understanding of **Git workflow**.
+To practice Linux basics: navigating with absolute and relative paths, copying files vs directories, and understanding file colors. 
 
 ---
 
 ## What I Learned
-- The difference between **relative and absolute paths**.
-- How to use **ls, cd, cp** with different options.
-- The importance of **branching in Git**.
-- The meaning of **colors in the terminal** (directories, executables, files).
+
+- The difference between `cp` and `cp -r`.  - `ls -l` shows detailed file info. 
+- Colors in Linux (blue, yellow, white). 
+- How to organize files in a structured repo. 
+
+---
+
+## Screenshots
+- ![Clone](screenshots/clone.png) 
+- ![Branch](screenshots/branch.png) 
+- ![Tree](screenshots/tree.png) 
+- ![Assignment answers](screenshots/assignment.png) 
+
+---

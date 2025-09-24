@@ -1,0 +1,38 @@
+#Name: Ineza Agape
+#ID: 27464
+
+Branch: 27464_ineza_agape_assignment1
+
+
+#Q1. From P3 to home
+Relative: cd ../../../../..
+Absolute: cd /home/agape
+
+#Q2. Long listing of Here
+Relative: ls -l ../P1/P2/P3/Here
+Absolute: ls -l /home/agape/test/P1/P2/P3/Here
+
+
+#Q3. Copy directory P3 into Command
+Relative (from P2): cp -r P3 ../Command/
+Relative (from P3): cp -r . ../Command/
+Relative (from Command): cp -r ../P1/P2/P3 .
+Absolute: cp -r /home/agape/test/P1/P2/P3 /home/agape/test/Command/
+
+
+#Q4. Copy files inside P3 into Command
+Relative (from P2): cp P3/* ../Command/
+Relative (from P3): cp * ../Command/
+Relative (from Command): cp ../P1/P2/P3/* .
+Absolute: cp /home/agape/test/P1/P2/P3/* /home/agape/test/Command/
+
+#Q5. Difference
+- Q3 copies the entire P3 directory (with Here inside).  
+- Q4 copies only the files inside P3.  
+
+#Q6. Colors
+- Blue = Directories  
+- Yellow = Executable files  
+- White = Normal files (e.g., hereWeAre, unless made executable)  
+
+End of Assignment
