@@ -21,9 +21,9 @@ cd C:/Users/HP
 
 ### Screenshots
 
-  - `./screenshots/q1-relative.png`
+`./screenshots/q1-relative.png`
     ![Q1 - Relative](./screenshots/Q1.png)
-  - `./screenshots/q1-absolute.png`
+`./screenshots/q1-absolute.png`
     ![Q1 - Absolute](./screenshots/Qn1.2.png)
 
 ---
@@ -75,13 +75,13 @@ $ ls ../../command
  
 ### Screenshot
 
- ![P3 to Command](./screenshots/Qn3.1.png)
+![P3 to Command](./screenshots/Qn3.1.png)
 -
-  ![P3 to Command froom P2](./screenshots/Qn3.2.png)
+![P3 to Command froom P2](./screenshots/Qn3.2.png)
 
-    ![P3 to Command from Command](./screenshots/Qn3.3.png)
+![P3 to Command from Command](./screenshots/Qn3.3.png)
 - 
-  ![P3 to Command with absolute path](./screenshots/Qn3.4.png)
+![P3 to Command with absolute path](./screenshots/Qn3.4.png)
 
 ---
 
