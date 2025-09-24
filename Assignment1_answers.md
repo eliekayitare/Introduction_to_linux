@@ -38,7 +38,7 @@ ls -l ../P1/Hi/P3/Here/
 
 2) **Absolute path**
 ```bash
-ls -l /home/your_username/Here
+ls -l /home/kheven/Here
 ```
 
 ### Screenshot
