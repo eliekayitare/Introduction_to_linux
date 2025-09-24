@@ -1,0 +1,35 @@
+# Assignment 1 – Introduction to Linux Basic Commands
+
+Name:Ineza_Agape  
+Student ID:2464  
+Branch:27464_INEZA_Agape_assignment1  
+---
+# question 1-move from p3 to home
+command using relative path:cd ~ OR cd ../../
+        using absolute path:cd /home/mcbishop
+
+# question 2- show long listing of "Here"
+Commands (relative path):ls -l ../Here
+Commands (absolute path example):ls -l /home/mcbishop/Here
+
+# question 3-Copy file P3 into Command directory
+  1.From P2:cp ../P3 ./Command
+  2.From P3:cp ./P3 ../Command
+  3.From Command:cp ../P3 ./
+  4.Absolute path:cp /home/mcbishop/P3 /home/mcbishop/Command
+
+# question 4-Copy all files in P3 into Command directory
+ 1.From P2:cp ../P3/* ./Command
+ 2.From P3:cp * ../Command
+ 3.From Command:cp ../P3/* ./
+ 4.Absolute path:cp /home/mcbishop/P3/* /home/mcbishop/Command
+
+# question 5-Difference between Q3 and Q4
+ Q3: Copies the directory itself while Q4: Copies contents of the directory.
+
+# question 6-Colors
+Yellow: Executable files
+
+Blue: Directories
+
+White: Normal text file (hereWeAre unless made executable)

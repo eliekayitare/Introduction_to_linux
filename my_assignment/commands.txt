@@ -1,0 +1,10 @@
+/c/Users/TECH HEAVEN/Introduction_to_linux
+total 1
+drwxr-xr-x 1 TECH HEAVEN 197121  0 Sep 23 20:38 my_assignment/
+-rw-r--r-- 1 TECH HEAVEN 197121 23 Sep 23 20:18 README.md
+/c/Users/TECH HEAVEN/Introduction_to_linux
+/c/Users/TECH HEAVEN
+/c/Users/TECH HEAVEN/Introduction_to_linux
+answers.txt
+commands.txt
+screenshots/
