@@ -75,10 +75,11 @@ $ ls ../../command
 
  
 ### Screenshot
-
+```
 ![P3 to Command](./screenshots/Qn3.1.png)
 -
 ![P3 to Command froom P2](./screenshots/Qn3.2.png)
+
 
 ![P3 to Command from Command](./screenshots/Qn3.3.png)
 - 
@@ -114,11 +115,11 @@ cp -r C:/Users/HP/practice/P1/Hi/P3/* C:/Users/HP/practice/command
 
  ![P3 to Command](./screenshots/Qn4.1.png)
 -
-  ![P3 to Command froom P2](./screenshots/Qn4.2.png)
+ ![P3 to Command froom P2](./screenshots/Qn4.2.png)
 
-    ![P3 to Command from Command](./screenshots/Qn4.3.png)
+![P3 to Command from Command](./screenshots/Qn4.3.png)
 - 
-  ![P3 to Command with absolute path](./screenshots/Qn4.4.png)
+![P3 to Command with absolute path](./screenshots/Qn4.4.png)
 
 
 ---
