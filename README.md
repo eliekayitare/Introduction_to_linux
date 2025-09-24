@@ -12,7 +12,7 @@
 2. **Created My Branch**  
    - Followed the required naming format:  
      ```bash
-     git checkout -b 12345_rudy_assignment1
+     git checkout -b 27283_Muyoboke-herve_assignment1
      ```
 
 3. **Worked on the Linux Commands**  
