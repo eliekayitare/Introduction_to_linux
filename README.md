@@ -1,31 +1,25 @@
-# Introduction_to_linux
-# Assignment 1 – Introduction to Linux Basic Commands
-
-## Student Info
-- Name: Ndayizeye Steven
-- Student ID: 27165
-- Course: COSC 8312
-
----
+# Assignment 1 – Introduction to Linux
 
 ## What I Did
-1. Cloned the repository from GitHub.
-2. Created a branch using the required format (`27165_Ndayizeye_steven_assignment1`).
-3. Solved the Linux conceptual questions by writing commands and explanations.
-4. Took screenshots of commands and their outputs.
-5. Pushed my work to my own branch (not the main branch).
-
----
+In this assignment, I worked on basic Linux commands to navigate the filesystem, list directory contents, and copy files. Specifically, I practiced:
+- Moving between directories using both relative and absolute paths.
+- Listing directory contents in long format.
+- Copying files and directories using relative and absolute paths.
+- Comparing the difference between copying a single file and copying all files from a directory.
+- Understanding the meaning of different colors used when listing files in Linux.
 
 ## Why I Did It
-- To practice **basic Linux navigation, file handling, and path concepts**.
-- To learn how to use **relative vs absolute paths**.
-- To strengthen understanding of **Git workflow**.
-
----
+The purpose of this assignment was to build a strong foundation in Linux command-line usage. These commands are essential because:
+- They allow efficient navigation and manipulation of files without relying on a graphical interface.
+- They are universally applicable across different Linux distributions and servers.
+- They form the basis for advanced tasks like scripting, automation, and system administration.
 
 ## What I Learned
-- The difference between **relative and absolute paths**.
-- How to use **ls, cd, cp** with different options.
-- The importance of **branching in Git**.
-- The meaning of **colors in the terminal** (directories, executables, files).
+Through this assignment, I learned:
+- How to differentiate between relative and absolute paths.
+- How to use the `ls -l` command to view detailed information about files and directories.
+- The syntax and usage of the `cp` command for copying files and directories.
+- The difference between copying a single file and copying all files from a directory.
+- How Linux uses color coding in the terminal to represent different types of files (e.g., directories, executables, symbolic links).
+
+This assignment helped me become more confident with Linux basics and prepared me for more advanced command-line operations in the future.
