@@ -1,31 +1,24 @@
 # Introduction_to_linux
-# Assignment 1 – Introduction to Linux Basic Commands
 
-## Student Info
-- Name: Ndayizeye Steven
-- Student ID: 27165
-- Course: COSC 8312
-
----
+# Assignment 1 – Linux Basic Commands
 
 ## What I Did
-1. Cloned the repository from GitHub.
-2. Created a branch using the required format (`27165_Ndayizeye_steven_assignment1`).
-3. Solved the Linux conceptual questions by writing commands and explanations.
-4. Took screenshots of commands and their outputs.
-5. Pushed my work to my own branch (not the main branch).
-
----
+- Cloned the repository from GitHub.
+- Created a new branch named `26295_MUHIRE_Blande_assignment1`.
+- Practiced Linux navigation (`cd`, `ls`), file copying (`cp`), recursive means also that file inside the directory will be included  (`-r `) and path usage (relative vs absolute).
+- Documented commands and included screenshots of outputs.
 
 ## Why I Did It
-- To practice **basic Linux navigation, file handling, and path concepts**.
-- To learn how to use **relative vs absolute paths**.
-- To strengthen understanding of **Git workflow**.
-
----
+- To understand and learn Linux filesystem navigation.
+- To learn the difference between relative and absolute paths.
+- To practice file management in Linux (copying single files vs multiple files).
 
 ## What I Learned
-- The difference between **relative and absolute paths**.
-- How to use **ls, cd, cp** with different options.
-- The importance of **branching in Git**.
-- The meaning of **colors in the terminal** (directories, executables, files).
+- How to use relative vs absolute paths effectively.
+- How to list files with detailed information using `ls -l`.
+- The difference between copying a single file and all files in a directory.
+- How Linux terminal colors indicate file types (blue for directories, yellow for executables, etc.).
+
+## Repository Information
+- Repository cloned from:(https://github.com/eliekayitare/Introduction_to_linux.git)
+- Work pushed on branch: `26295_MUHIRE_Blande_assignment1`
