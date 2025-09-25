@@ -3,7 +3,7 @@
 
 ### What I did
 - Cloned the instructor repository.
-- Created branch `27180_uwase_gentille_Assignment1`.
+- Created branch `26134_Philemon_MUVUNYI`.
 - Performed the commands required in Questions 1–6.
 - Took screenshots of terminal outputs and stored them in the pdf file.
 
