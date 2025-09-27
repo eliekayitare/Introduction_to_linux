@@ -1,7 +1,7 @@
 # Assignment 1 – Introduction to Linux Basic Commands  
 **Course:** COSC 8312  
 **University:** Adventist University of Central Africa  
-**Student:**  Nitonsenga Jimmy
+**Student:**  Niyonsenga Jimmy
 **ID :** 27555 
 **Date:** September 2025  
 
