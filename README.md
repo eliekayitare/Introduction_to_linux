@@ -1,35 +1,119 @@
-# Introduction_to_linux
+# Assignment 1 – Introduction to Linux Basic Commands  
+**Course:** COSC 8312  
+**University:** Adventist University of Central Africa  
+**Student:**  Nitonsenga Jimmy
+**ID :** 27555 
+**Date:** September 2025  
 
+---
 
-## What I Did
-I used several basic Linux commands to perform tasks related to file and directory management.
+## 📘 Overview
+This assignment focuses on understanding **Linux directory navigation**, **path usage (absolute and relative)**, and **file manipulation** using the `cp` command.  
 
-- cd (Change Directory): I used this command to move between different folders, including navigating up multiple levels using cd ../../.. and returning to the previous directory with cd -.
+Each question demonstrates the correct Linux commands with screenshots showing outputs.
 
-- ls -l (List): I ran this command to view all the files in the current directory in a detailed list format.
+---
 
-- cp (Copy): I used the cp command to copy both individual files and entire directories. To copy an entire directory, I had to use the recursive flag 
+## 🧭 Question 1  
+**If you are in the `P3` directory, write the command to go to your home. (4 marks)**  
 
-- -r. I performed copies using both absolute paths (starting from the root directory) and relative paths (based on the current location).
+### 1. Using a Relative Path  
+```bash
+cd ../../..
+```
 
-Color-coding: I observed that the terminal uses different colors to represent different elements, such as blue for directories and yellow for the current path.
+### 2. Using an Absolute Path  
+```bash
+cd /home/username
+```
 
-## Why I Did It
+🖼️ **Screenshot:**  
+![Screenshot 1](screenshot/1.png)
 
-- cd was used for navigation, allowing me to move to the correct locations to execute other commands.
+---
 
-- ls -l was used to verify the contents of a directory and ensure the commands were working as expected.
+## 📂 Question 2  
+**Write the command to show a long listing of `Here` (4 marks)**  
 
-- cp was used to duplicate files and entire folders. I specifically used the 
+### 1. Using a Relative Path (if you are in the Command directory)  
+```bash
+ls -l ../Here
+```
 
-- -r flag to copy a folder and all its contents, as the regular cp command only works for single files.
+### 2. Using an Absolute Path  
+```bash
+ls -l /home/username/Here
+```
 
-## What I Learned
+🖼️ **Screenshot:**  
+![Screenshot 2](screenshot/2.png)
 
-- Path Management: I learned the critical difference between absolute and relative paths. Absolute paths are static and work from any location, while relative paths are dynamic and depend on where you are currently located in the file system.
+---
 
-- Command Flags: I learned the importance of command flags, such as the -r in cp -r. This flag is necessary to perform a recursive copy, which is essential for copying entire directories and not just single files.
+## 📋 Question 3  
+**Write the command to copy the file `P3` to the Command directory (4 marks)**  
 
-- Terminal Visuals: The color-coding in the terminal is a helpful feature that provides immediate visual feedback. I learned to identify folders (blue), current paths (yellow), and other elements (like the username in green and GitHub distribution in pink) based on their color. These colors help to prevent confusion and make it easier to understand the output.
+### 1. Using a Relative Path (if you are in the P2 directory)  
+```bash
+cp ../P3 ./Command/
+```
 
-- The Power of cd: The cd command is more than just for moving forward; using cd .. and cd - provides a quick and efficient way to navigate backward and between recently visited directories.
+### 2. Using a Relative Path (if you are in the P3 directory)  
+```bash
+cp ./P3 ../Command/
+```
+
+### 3. Using a Relative Path (if you are in the Command directory)  
+```bash
+cp ../P3 ./ 
+```
+
+### 4. Using an Absolute Path  
+```bash
+cp /home/username/P3 /home/username/Command/
+```
+
+🖼️ **Screenshot:**  
+![Screenshot 3](screenshot/3.png)
+
+---
+
+## 📁 Question 4  
+**Write the command to copy the files in `P3` to the Command directory (4 marks)**  
+
+### 1. Using a Relative Path (if you are in the P2 directory)  
+```bash
+cp ../P3/* ./Command/
+```
+
+### 2. Using a Relative Path (if you are in the P3 directory)  
+```bash
+cp * ../Command/
+```
+
+### 3. Using a Relative Path (if you are in the Command directory)  
+```bash
+cp ../P3/* ./
+```
+
+### 4. Using an Absolute Path  
+```bash
+cp /home/username/P3/* /home/username/Command/
+```
+
+🖼️ **Screenshot:**  
+![Screenshot 4](screenshot/4.png)
+
+---
+
+## 💡 Summary  
+In these exercises, I practiced **navigating directories** and **copying files** using **relative and absolute paths**.  
+I learned the difference between copying **a single file** and **all files** in a directory using wildcards (`*`).  
+
+---
+
+## 🧠 What I Learned
+- The difference between **relative** and **absolute** paths.  
+- How to use `ls -l` for detailed listings.  
+- How to copy files and directories using `cp`.  
+- The importance of directory structure awareness in Linux.
