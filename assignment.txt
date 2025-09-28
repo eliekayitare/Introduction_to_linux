@@ -1,0 +1,24 @@
+git clone https://github.com/eliekayitare/introduction_to_linux.git
+pwd
+ls
+cd introduction_to_linux
+git checkout -b 26975_NiyoyavuzeAmiellePontienne_assignment1
+git branch
+mkdir -p practice/command/info
+mkdir -p practice/else
+mkdir -p practice/p1/hi/hello
+mkdir -p practice/p1/hi/p3/here/hereWeAre
+mkdir -p practice/p1/p2
+ls -R practice
+cd practice/p1/hi.p3
+cd /home/ubuntuuser
+cd ../../../..
+ls -l /home/ubuntuuser/practice/p1/hi/p3/here
+ls -l ../p1/hip3/here
+cp -r /home/ubuntuuser/practice/p1/hi/p3 /home/ubuntuuser/practice/command/
+cp -r ../hi/p3 ../../command
+cp -r /home/ubuntuuser/practice/p1/hi/p3/* /home/ubuntuuser/practice/command/
+cp -r ../hi/p3/* ../../command/
+cp -r * ../../../command/
+nano assignment.txt
+
