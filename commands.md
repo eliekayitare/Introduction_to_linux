@@ -245,3 +245,14 @@ t/l lists contents; x extracts matches; u adds; error on corrupt.
 
 ## Question 13
 
+```powershell
+rsync -a --delete source/ daily_inc/  # Incremental daily, preserves metadata
+tar czf backup_daily_$(date +%Y-%m-%d).tar.gz daily_inc/  # Archive daily
+# Weekly: if Monday, tar czf weekly_$(date +%Y-%W).tar.gz source/
+# Monthly: if 1st, tar czf monthly_$(date +%Y-%m).tar.gz source/
+find . -name "daily_*" -mtime +7 -delete  # Cleanup old daily
+tar tzf backup_daily_*.tar.gz  # Verify integrity (or md5sum)
+Prevents conflicts via date stamps; restore: tar xzf specific.tar.gz. Metadata preserved with -a/-p.
+```
+![q13](./screenshots/q13.png)
+![q13a](./screenshots/q13a.png)
