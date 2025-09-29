@@ -223,3 +223,25 @@ echo "ZIP Ratio: $(echo "scale=2; $original_size / $zip_size" | bc)"
 ![Q11C](./screenshots/Q10B.png)
 ![Q11B](./screenshots/Q10C.png)
 ![Q11C](./screenshots/Q10D.png)
+
+## Question 12
+
+```powershell
+tar czf test.tar.gz somefiles
+zip test.zip somefiles
+echo corrupt > corrupt.tar.gz  # Simulate corrupt
+tar tzf test.tar.gz  # Examine without extract
+zip -l test.zip
+tar xzf test.tar.gz --wildcards "*.txt"  # Extract pattern
+zip -u test.zip newfile  # Update
+tar tzf corrupt.tar.gz || echo "Corrupt"  # Handle
+unzip -p test.zip | tar czf new.tar.gz -; tar xzf test.tar.gz -C temp; zip -r new.zip temp  # Merge example: pipe/extract to new
+t/l lists contents; x extracts matches; u adds; error on corrupt.
+```
+![q12](./screenshots/Q12.png)
+![q12a](./screenshots/Q12A.png)
+![q12b](./screenshots/Q12B.png)
+![q12c](./screenshots/Q12C.png)
+
+## Question 13
+
