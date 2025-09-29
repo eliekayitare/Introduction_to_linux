@@ -31,3 +31,17 @@ This works even if parents exist because of -p. One command total.
 ![creationOfFolders](./screenshots/Q2.png)
 ---
 ![showingFolders](./screenshots/Q2B.png)
+
+## Question 3
+
+Commands used :
+
+```powershell
+cd ../../../../personal/experiments
+pwd  # Proves: /home/user/projects/personal/experiments
+cd ../../shared/templates
+pwd  # Proves: /home/user/projects/shared/templates
+cd ../../client_work/web/frontend
+pwd  # Proves: /home/user/projects/client_work/web/frontend (back to start)
+```
+![Q4](./screenshots/Q3.png)
