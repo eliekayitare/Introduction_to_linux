@@ -273,3 +273,21 @@ Implications: If regular user has system groups (e.g., adm), could read logs, es
 ```
 ![q14](./screenshots/q14.png)
 ![q14a](./screenshots/q14b.png)
+
+## Question 15
+
+```powershell
+groups  # Configured
+id -Gn  # Effective
+usermod -aG adm $USER  # Add to group
+groups  # Still old until logout
+newgrp adm  # Or re-login
+groups  # Now updated
+# Logs: adm group
+# Web: www-data/apache
+# Admin: sudo/wheel
+
+Output: groups shows change after re-login/newgrp.
+Principle: Assign minimal groups needed; e.g., don't add to sudo unless necessary, reduces attack surface.
+```
+![Q15](./screenshots/Q15.png)
