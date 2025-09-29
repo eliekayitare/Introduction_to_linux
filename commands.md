@@ -291,3 +291,18 @@ Output: groups shows change after re-login/newgrp.
 Principle: Assign minimal groups needed; e.g., don't add to sudo unless necessary, reduces attack surface.
 ```
 ![Q15](./screenshots/Q15.png)
+
+## Question 16
+
+```powershell
+sudo -l  # Permissions
+sudo -i  # Root shell with env
+sudo su  # Root but current env
+su -  # Root login shell
+sudo lastlog | grep sudo  # Or /var/log/auth.log for patterns
+
+Output: -l lists allowed cmds; differences: -i cleans env, su - loads root profile.
+Concerns: ALL=(ALL) ALL too permissive, allows anything. Improve: specific cmds, e.g., /usr/bin/apt, use groups, audit logs.
+```
+![Q16](./screenshots/Q16.png)
+![Q16B](./screenshots/Q16B.png)
