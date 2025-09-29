@@ -256,3 +256,20 @@ Prevents conflicts via date stamps; restore: tar xzf specific.tar.gz. Metadata p
 ```
 ![q13](./screenshots/q13.png)
 ![q13a](./screenshots/q13a.png)
+
+## Question 14
+
+Commands:
+
+```powershell
+id  # Current user groups
+sudo useradd testuser; sudo groupadd testgroup; sudo usermod -aG testgroup testuser
+id testuser  # Compare groups
+grep -E '^(root|bin|daemon|sys|adm|nobody|[a-z]+):' /etc/passwd  # System vs regular (system UID <1000, no home/shell or /bin/false)
+
+id shows uid, gid, groups; grep shows system users have low UID, /usr/sbin/nologin shell.
+
+Implications: If regular user has system groups (e.g., adm), could read logs, escalate privileges, violate least privilege.
+```
+![q14](./screenshots/q14.png)
+![q14a](./screenshots/q14b.png)
