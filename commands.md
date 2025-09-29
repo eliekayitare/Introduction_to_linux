@@ -85,3 +85,17 @@ touch {dev,staging,prod}_{web,api,db}.conf  # Configs for environments x service
 touch {A,B,C}{10..12}_{input,output}.txt  # Test files A10_input.txt etc.
 ```
 ![Q6](./screenshots/Q6.png)
+
+## Question 7
+
+```powershell
+echo -e "Line1\nLine2\nLine3" > linux.conf  # Linux LF
+echo -e "Line1\r\nLine2\r\nLine3" > windows.conf  # Windows CRLF
+diff linux.conf windows.conf  # Shows differences due to endings
+cmp linux.conf windows.conf  # Reports byte where they differ
+comm linux.conf windows.conf  # Shows unique/common, but mangled due to endings
+```
+Output description: diff shows all lines differ; cmp shows first differing byte; comm shows all in columns 1 and 2.
+Lesson: Cross-platform compatibility requires consistent line endings; tools like dos2unix fix this, as Windows CRLF can break Linux scripts.
+
+![Q7](./screenshots/Q7.png)
