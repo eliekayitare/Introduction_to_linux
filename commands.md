@@ -124,3 +124,36 @@ find . -not -user $USER -not -user root  # Owned by others
 find . \( -name "*~" -o -name "*.bak" \)  # Temp/backup
 ```
 ![Q8](./screenshots/Q8.png)
+
+## Question 9
+
+```powershell
+ls -l big.log
+wc -l big.log
+seq 1 300 > big.log
+sed -i '50i error' big.log  # Insert "error" at line 50
+sed -i '150i error' big.log  # Insert "error" at line 150
+sed -i '250i error' big.log  # Insert "error" at line 250
+grep -n "error" big.log
+
+head -n 175 big.log | tail -n 50
+xpected Output: Displays lines 126 to 175 (e.g., numbers 126 to 175).
+Explanation: head -n 175 takes the first 175 lines, and tail -n 50 takes the last 50 of those, centering around the middle.
+
+grep -n -A5 "error" big.log | tail -n6
+
+-n adds line numbers, -A5 shows 5 lines after each match, and tail -n6 takes the last 6 lines to capture the last "error" (line 250) and its 5 following lines (251-255).
+
+time cat big.log > /dev/null
+time less big.log
+time head big.log > /dev/null
+
+cat dumps the entire file (timed to /dev/null to avoid display).
+less loads interactively (press q to exit and see time).
+head shows only the first part (timed to /dev/null).
+```
+![Q9](./screenshots/Q9B.png)
+![Q9A](./screenshots/Q9C.png)
+![Q9B](./screenshots/Q9D.png)
+![Q9C](./screenshots/Q9E.png)
+
