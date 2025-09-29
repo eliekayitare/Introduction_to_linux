@@ -99,3 +99,28 @@ Output description: diff shows all lines differ; cmp shows first differing byte;
 Lesson: Cross-platform compatibility requires consistent line endings; tools like dos2unix fix this, as Windows CRLF can break Linux scripts.
 
 ![Q7](./screenshots/Q7.png)
+
+## Question 8
+
+```powershell
+mkdir test_env
+cd test_env
+touch file{1..10} hidden.{1..5} largefile smallfile
+dd if=/dev/zero of=largefile bs=1M count=10  # 10MB
+touch -m -t $(date -d '-50 hours' +%Y%m%d%H%M) file{1..3}  # Modified 50h ago
+mkdir empty_dir hidden_only_dir
+touch hidden_only_dir/.hidden
+chmod o+w world_writable
+sudo chown nobody other_owned  # Assume sudo available
+touch temp~ backup.bak
+
+Find Commands
+
+find . -type f -size +$(find . -type f -printf '%s\n' | awk '{sum+=$1; n++} END {print int(sum/n)}')c  # Larger than avg size
+find . -type f -mtime -3 -a ! -mtime -1  # Modified last 72h but not 24h
+find . -type d \( -empty -o \( ! -name . -prune -exec sh -c 'ls -A "$0" | grep -qv "^\." && exit 1 || exit 0' {} \; \) \)  # Empty or only hidden
+find . -perm -o=w  # World-writable
+find . -not -user $USER -not -user root  # Owned by others
+find . \( -name "*~" -o -name "*.bak" \)  # Temp/backup
+```
+![Q8](./screenshots/Q8.png)
