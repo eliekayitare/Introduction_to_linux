@@ -178,3 +178,48 @@ find . -name "temp*.tmp" -atime +30 -exec rm {} \;
 ![Q10A](./screenshots/Q10B.png)
 ![Q10B](./screenshots/Q10C.png)
 ![Q10C](./screenshots/Q10D.png)
+
+## Question 11
+
+```powershell
+mkdir text_dir
+for i in {1..10}; do seq 1 10000 > text_dir/text_file$i.txt; done  # Create 10 large text files (~50KB each, total ~500KB)
+du -sh text_dir compressed_dir
+ls -l text_dir compressed_dir
+original_size=$(du -b text_dir | awk '{print $1}')
+time tar czf text.tar.gz text_dir  # tar + gzip
+gz_size=$(du -b text.tar.gz | awk '{print $1}')
+echo "GZIP Ratio: $(echo "scale=2; $original_size / $gz_size" | bc)"
+
+time tar cjf text.tar.bz2 text_dir  # tar + bzip2
+bz2_size=$(du -b text.tar.bz2 | awk '{print $1}')
+echo "BZIP2 Ratio: $(echo "scale=2; $original_size / $bz2_size" | bc)"
+
+time tar cJf text.tar.xz text_dir  # tar + xz
+xz_size=$(du -b text.tar.xz | awk '{print $1}')
+echo "XZ Ratio: $(echo "scale=2; $original_size / $xz_size" | bc)"
+
+time zip -r text.zip text_dir  # zip
+zip_size=$(du -b text.zip | awk '{print $1}')
+echo "ZIP Ratio: $(echo "scale=2; $original_size / $zip_size" | bc)"
+original_size=$(du -b compressed_dir | awk '{print $1}')
+time tar czf compressed.tar.gz compressed_dir  # tar + gzip
+gz_size=$(du -b compressed.tar.gz | awk '{print $1}')
+echo "GZIP Ratio: $(echo "scale=2; $original_size / $gz_size" | bc)"
+
+time tar cjf compressed.tar.bz2 compressed_dir  # tar + bzip2
+bz2_size=$(du -b compressed.tar.bz2 | awk '{print $1}')
+echo "BZIP2 Ratio: $(echo "scale=2; $original_size / $bz2_size" | bc)"
+
+time tar cJf compressed.tar.xz compressed_dir  # tar + xz
+xz_size=$(du -b compressed.tar.xz | awk '{print $1}')
+echo "XZ Ratio: $(echo "scale=2; $original_size / $xz_size" | bc)"
+
+time zip -r compressed.zip compressed_dir  # zip
+zip_size=$(du -b compressed.zip | awk '{print $1}')
+echo "ZIP Ratio: $(echo "scale=2; $original_size / $zip_size" | bc)"
+```
+![Q11](./screenshots/Q11.png)
+![Q11C](./screenshots/Q10B.png)
+![Q11B](./screenshots/Q10C.png)
+![Q11C](./screenshots/Q10D.png)
