@@ -60,3 +60,17 @@ touch {main_script,util_script,config_script,helper_script,app_script,lib_script
 touch {a1,a2,a3,a4,a5}.bak {b1,b2,b3,b4,b5}.txt {c1,c2,c3,c4,c5}.log {d1,d2,d3,d4,d5}.zip  # 5 each starting with a,b,c,d, mixed extensions
 ```
 ![Q4](./screenshots/Q4.png)
+
+## Question 5 
+
+Commands used :
+
+```powershell
+mkdir archive desktop # Creating the folders archive and desktop
+mv page_*[0-9].html archive/  # Move files like page_001.html (ending in numbers before extension); pattern: *[0-9].* but specified to HTML for precision
+cp *.css desktop/ && rm desktop/*{mobile,tablet}*.css  # Copy all CSS, then remove those containing 'mobile' or 'tablet'
+ls ???.*  # List files with exactly 3 chars before the dot (e.g., abc.txt); if no match, outputs error or nothing
+ls [bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]*  # Files starting with consonant (not aeiouAEIOU)
+ls *.??  # Identify files with exactly 2-char extensions (e.g., *.js)
+```
+![Q5](./screenshots/Q5.png)
