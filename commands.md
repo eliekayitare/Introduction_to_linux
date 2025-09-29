@@ -1,7 +1,9 @@
 ## Question 1
 Commands used:  
+```powershell
 cd / (change directory into the root directory)  
 ls (listing all the directories inside the root folder) 
+```
 Output description: Lists root directories including bin, etc, var, usr, tmp, opt, boot, home.
 Explanation and reasoning: 
 
