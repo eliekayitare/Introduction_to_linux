@@ -21,10 +21,13 @@ Most likely: /etc for configs, /bin for binaries, /var for logs.
 
 Commands used (minimum, using -p for parents):   
 
-mkdir -p ~/projects/{client_work/{web/{frontend,backend,database},mobile/{ios,android}},personal/{experiments,archive},shared/{templates,resources}}   
+```powershell
+
+mkdir -p ~/projects/{client_work/{web/{frontend,backend,database},mobile/{ios,android}},personal/{experiments,archive},shared/{templates,resources}}  
+```
 Output description: No output if successful; use tree ~/projects to verify the tree structure matching the diagram.  
 This works even if parents exist because of -p. One command total.
-  
+
 ![creationOfFolders](./screenshots/Q2.png)
 ---
 ![showingFolders](./screenshots/Q2B.png)
