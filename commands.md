@@ -306,3 +306,35 @@ Concerns: ALL=(ALL) ALL too permissive, allows anything. Improve: specific cmds,
 ```
 ![Q16](./screenshots/Q16.png)
 ![Q16B](./screenshots/Q16B.png)
+
+## Bonnus Question 17
+
+```powershell
+mkdir forensic
+cd forensic
+touch regular_file
+mkdir subdir
+ln -s regular_file sym_link
+ln regular_file hard_link
+mknod device c 1 3  # Char device if possible
+chmod +t subdir  # Sticky
+chmod u+s regular_file  # Setuid
+chmod g+s subdir  # Setgid
+sudo chown root regular_file
+tar czf archive.gz regular_file
+tar cjf archive.bz2 regular_file
+zip archive.zip regular_file
+
+ls -l  # Types (d dir, l sym, - reg, c device), perms, ownership
+stat regular_file  # Details timestamps
+getfacl *  # ACLs if set
+find . -links +1  # Hard links
+ls -ld subdir  # Special bits (t,s)
+tar tzf archive.gz  # Archives
+
+Investigator use: ls/stat show modifications; unusual setuid/world-write indicate backdoors; timestamp inconsistencies suggest tampering; ownership changes point to escalation.
+Artifacts for compromise: Unexpected setuid binaries, hidden files in /tmp, modified /etc/passwd timestamps, logs with failed su.
+```
+![Q17](./screenshots/Q17.png)
+![Q17B](./screenshots/Q17B.png)
+![Q17A](./screenshots/Q17A.png)
