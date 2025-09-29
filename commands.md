@@ -45,3 +45,4 @@ cd ../../client_work/web/frontend
 pwd  # Proves: /home/user/projects/client_work/web/frontend (back to start)
 ```
 ![Q4](./screenshots/Q3.png)
+In the screenshot provided some of the codes failed, so in total it was only 2 cds
