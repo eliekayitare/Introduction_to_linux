@@ -1,6 +1,3 @@
-Perfect ✅ — here’s a clean **`answers.md` template** you can drop into your `assignment2` folder. It already has placeholders for **Q1 → Q16 + Bonus**, with sections for **commands, screenshots, and explanations**. You just paste in your actual screenshots and short notes.
-
----
 
 ````markdown
 # Assignment 2 – Introduction to Linux  
