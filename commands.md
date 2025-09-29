@@ -74,3 +74,14 @@ ls [bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]*  # Files starting with consonan
 ls *.??  # Identify files with exactly 2-char extensions (e.g., *.js)
 ```
 ![Q5](./screenshots/Q5.png)
+
+## Question 6
+
+Commands used :
+
+```powershell
+touch log_2024-{01..03}-{01..31}.txt  # Logs for Jan-Mar 2024 (handles non-31 days manually if needed, but efficient)
+touch {dev,staging,prod}_{web,api,db}.conf  # Configs for environments x services
+touch {A,B,C}{10..12}_{input,output}.txt  # Test files A10_input.txt etc.
+```
+![Q6](./screenshots/Q6.png)
