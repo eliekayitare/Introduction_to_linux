@@ -157,3 +157,24 @@ head shows only the first part (timed to /dev/null).
 ![Q9B](./screenshots/Q9D.png)
 ![Q9C](./screenshots/Q9E.png)
 
+## Question 10
+
+Commands:
+```powershell
+touch file1.txt file2.conf temp_old.tmp temp_recent.tmp script.sh old_file.txt
+chmod +x script.sh  # Make script.sh executable (755)
+touch -a -t $(date -d '-40 days' +%Y%m%d%H%M) temp_old.tmp  # Not accessed recently
+touch -a -t $(date -d '-10 days' +%Y%m%d%H%M) temp_recent.tmp  # Accessed recently
+touch -m -t $(date -d '-40 days' +%Y%m%d%H%M) old_file.txt  # Modified >30 days ago
+dd if=/dev/zero of=old_file.txt bs=1M count=5  # Add 5MB size for space calc
+ls -l
+find . -type f ! -perm /a=x -exec chmod 644 {} \; -o -perm /a=x -exec chmod 755 {} \;
+find . -type f -mtime +30 -exec du -b {} + | awk '{sum+=$1} END {print sum " bytes"}'
+find . -name "*.conf" -exec cp {} {}.backup \;
+find . -name "temp*.tmp" -atime +30 -exec echo "Would remove {}" \;
+find . -name "temp*.tmp" -atime +30 -exec rm {} \;
+```
+![Q10](./screenshots/Q10%20A.png)
+![Q10A](./screenshots/Q10B.png)
+![Q10B](./screenshots/Q10C.png)
+![Q10C](./screenshots/Q10D.png)
