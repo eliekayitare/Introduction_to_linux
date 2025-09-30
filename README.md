@@ -1,4 +1,6 @@
-Overview of the Assignment
+## Overview of the Assignment
+
+```powershell
 This assignment focused on Linux fundamentals, including directory navigation, file creation/manipulation, wildcards, compression, backups, and user/group management. I addressed all 16 main questions and the bonus (Question 17). Commands were tested in isolated test directories (e.g., ~/test_env, ~/q10_test) to avoid system clutter. I used efficient tools like mkdir -p, touch with braces, find -exec, and tar to meet requirements for minimum commands and safety.
 What I Did
 I systematically completed each question by:
@@ -121,3 +123,4 @@ Test in isolated dirs to avoid system impact; use man for command options.
 For future assignments, start early for testing; automate with scripts for repetitive tasks.
 Improve: Add more error handling (e.g., || echo "Failed"); use tools like tree for visualization.
 General: Practice sudoers config for secure environments; verify backups regularly.
+```
