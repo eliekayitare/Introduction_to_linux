@@ -1,35 +1,163 @@
-# Introduction_to_linux
+# 🐧 Introduction to Linux — Assignment 2  
+**Course Code:** COSC 8312  
+**Student:** Dushimimana Prince 👑  
+**ID:** 27555  
+**Date:** 28-September 2025 
 
+## 📌 Overview
+This repository contains my solutions for **Assignment 2 – Individual**, as part of the Introduction to Linux course.
 
-## What I Did
-I used several basic Linux commands to perform tasks related to file and directory management.
+Each question includes:
+- The explanation or commands used.
+- A screenshot of the output (where applicable).
 
-- cd (Change Directory): I used this command to move between different folders, including navigating up multiple levels using cd ../../.. and returning to the previous directory with cd -.
+---
 
-- ls -l (List): I ran this command to view all the files in the current directory in a detailed list format.
+## ✅ Questions & Answers
 
-- cp (Copy): I used the cp command to copy both individual files and entire directories. To copy an entire directory, I had to use the recursive flag 
+### **Q1. Linux Directories and Their Purpose**
+- Discussed `/bin`, `/etc`, `/var`, `/usr`, `/tmp`, `/opt`, `/boot`, `/home`  
+- Identified where attackers might modify configuration files, binaries, and log files.  
+*(No screenshot required)*
 
-- -r. I performed copies using both absolute paths (starting from the root directory) and relative paths (based on the current location).
+---
 
-Color-coding: I observed that the terminal uses different colors to represent different elements, such as blue for directories and yellow for the current path.
+### **Q2. Project Directory Structure**
+- Created nested project folders with minimum commands.  
+📸 *Screenshot: ![Q2](screenshot/Q2.png)*
 
-## Why I Did It
+---
 
-- cd was used for navigation, allowing me to move to the correct locations to execute other commands.
+### **Q3. Navigating with Limited `cd` Commands**
+- Showed navigation between directories without exceeding 3 `cd` uses.  
+📸 *Screenshot: ![Q3](screenshot/Q3.png)*
 
-- ls -l was used to verify the contents of a directory and ensure the commands were working as expected.
+---
 
-- cp was used to duplicate files and entire folders. I specifically used the 
+### **Q4. Web Project Structure**
+- Created 15 HTML files, 8 CSS files, 6 JS files, and 20 backup files using efficient commands.  
+📸 *Screenshot: ![Q4](screenshot/Q4.png)*
 
-- -r flag to copy a folder and all its contents, as the regular cp command only works for single files.
+---
 
-## What I Learned
+### **Q5. Wildcard File Management**
+- Used wildcards to:
+  - Move numbered files → `archive/`
+  - Copy CSS files (excluding mobile/tablet) → `desktop/`
+  - List files with exactly 3 characters before extension
+  - Match files starting with consonants
+  - Find extensions of exactly 2 chars  
+📸 *Screenshot: ![Q5](screenshot/Q5.png)*
 
-- Path Management: I learned the critical difference between absolute and relative paths. Absolute paths are static and work from any location, while relative paths are dynamic and depend on where you are currently located in the file system.
+---
 
-- Command Flags: I learned the importance of command flags, such as the -r in cp -r. This flag is necessary to perform a recursive copy, which is essential for copying entire directories and not just single files.
+### **Q6. Brace Expansion**
+- Generated logs for Q1 2024, config files across 3 services, and test files with A–C and 10–12.  
+📸 *Screenshot: ![Q6](screenshot/Q6.png)*
 
-- Terminal Visuals: The color-coding in the terminal is a helpful feature that provides immediate visual feedback. I learned to identify folders (blue), current paths (yellow), and other elements (like the username in green and GitHub distribution in pink) based on their color. These colors help to prevent confusion and make it easier to understand the output.
+---
 
-- The Power of cd: The cd command is more than just for moving forward; using cd .. and cd - provides a quick and efficient way to navigate backward and between recently visited directories.
+### **Q7. Linux vs Windows Line Endings**
+- Created files with LF vs CRLF endings, compared with `diff`, `cmp`, and `comm`.  
+- Learned about cross-platform compatibility issues.  
+📸 *Screenshot: ![Q7](screenshot/Q7.png)*
+
+---
+
+### **Q8. Using `find` for Security Audit**
+- Found:
+  - Files larger than average
+  - Files modified in last 72h but not 24h
+  - Empty/hidden-only directories
+  - World-writable files
+  - Files owned by others
+  - Backup/temp-like files  
+📸 *Screenshot: ![Q8](screenshot/Q8.png)*
+
+---
+
+### **Q9. Log File Analysis**
+- Created log file (200+ lines).  
+- Extracted middle 50 lines, searched for last occurrence of a word with context, timed tools, and explained why `less` is better than `cat`.  
+📸 *Screenshot: ![Q9](screenshot/Q9.png)*
+
+---
+
+### **Q10. Automating File Maintenance**
+- Used `find -exec` to:
+  - Change permissions
+  - Calculate disk space
+  - Backup `.conf` files
+  - Safely remove temp files  
+📸 *Screenshot: ![Q10](screenshot/Q10.png)*
+
+---
+
+### **Q11. Compression Comparisons**
+- Tested `tar+gzip`, `tar+bzip2`, `tar+xz`, and `zip`.  
+- Compared results for already-compressed vs text files.  
+- Recommended best method for automated backups.  
+📸 *Screenshot: ![Q11](screenshot/Q11.png)*
+
+---
+
+### **Q12. Archive Management**
+- Examined archives without extraction, extracted patterns, updated archives, handled corruption, and merged different formats.  
+📸 *Screenshot: ![Q12](screenshot/Q12.png)*
+
+---
+
+### **Q13. Backup Rotation Strategy**
+- Designed daily incremental, weekly full, monthly archive system.  
+- Preserved metadata and verified integrity.  
+📸 *Screenshot: ![Q13](screenshot/Q13.png)*
+
+---
+
+### **Q14. User and Group Analysis**
+- Compared groups, analyzed `/etc/passwd` for system vs normal users, explained security implications.  
+📸 *Screenshot: ![Q14](screenshot/Q14.png)*
+
+---
+
+### **Q15. Group Membership Propagation**
+- Demonstrated login required for group changes.  
+- Identified groups for logs, web server, admin.  
+- Explained least privilege principle.  
+📸 *Screenshot: ![Q15](screenshot/Q15.png)*
+
+---
+
+### **Q16. Sudo Permissions Audit**
+- Compared `sudo -i`, `sudo su`, `su -`.  
+- Ran commands as other users.  
+- Checked system logs for login patterns.  
+- Suggested improvements to sudo configs.  
+📸 *Screenshot: ![Q16](screenshot/Q16.png)*
+
+---
+
+## 📚 What I Learned
+- Efficient navigation and file creation with wildcards and brace expansion.  
+- Importance of permissions, ownership, and groups for system security.  
+- How compression tools vary by data type.  
+- Backup strategies and archive management.  
+- Troubleshooting group/permission issues and auditing `sudo`.  
+
+---
+
+## ⚡ Challenges
+- Remembering precise wildcard/brace patterns.  
+- Managing complex `find` queries with multiple conditions.  
+- Distinguishing subtle sudo differences.  
+
+---
+
+## 💡 Recommendations
+- Always preview dangerous operations with `-exec echo`.  
+- Use the right compression tool based on content type.  
+- Apply least privilege when assigning groups/permissions.  
+
+---
+
+📂 **Folder Structure**
