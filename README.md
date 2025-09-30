@@ -27,4 +27,5 @@ commands.
 - **Importance of timestamps, ownership, and special permissions in detecting anomalies.**
 - **Windows and Linux handle line endings differently.**
 - **Difference between system and normal users in /etc/passwd.**
-- ** Automating cleanup of temporary files and backup rotation using find` + cron jobs.**
+- **Automating cleanup of temporary files and backup rotation using find` + cron jobs.**
+
