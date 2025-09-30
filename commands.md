@@ -174,10 +174,10 @@ find . -name "*.conf" -exec cp {} {}.backup \;
 find . -name "temp*.tmp" -atime +30 -exec echo "Would remove {}" \;
 find . -name "temp*.tmp" -atime +30 -exec rm {} \;
 ```
-![Q10](./screenshots/Q10%20A.png)
-![Q10](./screenshots/Q10B.png)
-![Q10](./screenshots/Q10C.png)
-![Q10](./screenshots/Q10D.png)
+![Q10A](./screenshots/Q10%20A.png)
+![Q10B](./screenshots/Q10B.png)
+![Q10C](./screenshots/Q10C.png)
+![Q10D](./screenshots/Q10D.png)
 
 ## Question 11
 
