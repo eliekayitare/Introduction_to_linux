@@ -1,0 +1,85 @@
+# 1. Clone the repository
+git clone https://github.com/eliekayitare/Introduction_to_linux.git
+
+cd Introduction_to_linux
+git checkout -b 27654_happymurungi_assignment2
+
+mkdir -p ~/projects/web_project/{html,css,js,backup}
+cd ~/projects/web_project/html
+touch index.html about.html contact.html page_{001..012}.html
+cd ../css
+touch main.css reset.css theme_{light,dark}.css mobile.css tablet.css desktop.css print.css
+cd ../js
+touch {script,util,config}_{1,2,3}.js
+
+cd ../backup
+touch {a,b,c,d}{file1,file2,file3,file4,file5}.{txt,png,jpg}
+
+mkdir -p ~/projects/web_project/archive
+mv html/*_*.html ~/projects/web_project/archive/
+
+mkdir -p ~/projects/web_project/desktop
+cp css/*.css ~/projects/web_project/desktop/ --exclude='*mobile*' --exclude='*tablet*'
+ls | grep '^[^.]\{3\}\.'
+
+find . -type f ! -name '[aeiou]*'
+
+find . -type f -name '*.[a-zA-Z][a-zA-Z]'
+
+touch log_{2024-01-{01..31},2024-02-{01..29},2024-03-{01..31}}.txt
+touch {development,staging,production}_{web,api,db}.conf
+
+touch {A,B,C}{10,11,12}.{input,output}
+
+echo "Sample configuration" > config_linux.conf
+unix2dos config_linux.conf config_windows.conf
+
+diff config_linux.conf config_windows.conf
+cmp config_linux.conf config_windows.conf
+comm config_linux.conf config_windows.conf
+
+
+find / -type f -size +$(find . -type f -exec wc -c {} + | awk '{print int($1)}' | awk '{sum+=$1} END {print sum/NR}')c
+find / -type f -mtime -3 ! -mtime -1
+find / -type d \( -empty -o -name '.*' \)
+find / -type f -perm -0002
+find / -not -user $(whoami) -not -user root
+find / -name '*~' -o -name '*.bak'
+
+head -n 100 big_log_file.log | tail -n 50
+grep -A 5 'specific_word' big_log_file.log
+time less big_log_file.log
+grep -n 'error' big_log_file.log
+
+find . -type f ! -perm /111 -exec chmod 644 {} \;
+find . -type f -mtime +30 -exec du -ch {} + | tail -n 1
+find . -name '*.conf' -exec cp {} {}.backup \;
+find . -type f -name '*temp*' -atime +30 -exec rm {} \;
+
+# 19. Create archives using different compression methods
+tar -czf archive.tar.gz ~/projects/web_project/
+tar -cjf archive.tar.bz2 ~/projects/web_project/
+tar -cJf archive.tar.xz ~/projects/web_project/
+zip -r archive.zip ~/projects/web_project/
+
+# 20. Examine and extract archive contents safely
+tar -tf archive.tar.gz
+tar -xf archive.tar.gz --wildcards '*.txt'
+zip -u archive.zip *.txt
+unzip -l archive.zip
+
+# 21. Backup rotation strategy
+mkdir -p ~/backups/{daily,weekly,monthly}
+tar -czf ~/backups/daily/backup_$(date +%Y%m%d).tar.gz ~/important_files/
+tar -czf ~/backups/weekly/full_backup_$(date +%Y%m%d).tar.gz ~/important_files/
+find ~/backups/daily -mtime +30 -exec rm {} \;
+
+# 22. Analyze user access issues
+groups $(whoami)
+groups other_user
+cat /etc/passwd | grep -E '^[^:]+:[^:]*:[0-9]+:[0-9]+:'
+
+# 23. Investigate group membership propagation
+groups $(whoami)
+newgrp somegroup
+groups $(whoami)

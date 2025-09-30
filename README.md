@@ -1,60 +1,37 @@
-## Student Info
-- Name: Serge Mugabo
-- Student ID: 26065
-- Course: COSC 8312
+# Introduction to Linux Assignment
 
----
+## Overview
+This repository contains my work for Assignment 2 of the COSC 8312 course at Adventist University of Central Africa. The assignment involves various Linux commands, file management techniques, and system navigation tasks.
 
 ## What I Did
-1. Cloned the repository from GitHub.
-2. Created a branch using the required format (`26065_mugabo_serge_assignment1`).
-3. Solved the Linux conceptual questions by writing commands and explanations.
-4. Took screenshots of commands and their outputs.
-5. Pushed my work to my own branch (not the main branch).
-
----
-
-## Why I Did It
-- To practice **basic Linux navigation, file handling, and path concepts**.
-- To learn how to use **relative vs absolute paths**.
-- To strengthen understanding of **Git workflow**.
-
----
-
-## What I Learned
-- The difference between **relative and absolute paths**.
-- How to use **ls, cd, cp** with different options.
-- The importance of **branching in Git**.
-- The meaning of **colors in the terminal** (directories, executables, files).
-
-
-**Student ID:** 26065
-**Name:** MUGABO Serge
-
----
-
-## What I Did
-- Installed Ubuntu in WSL and updated the system.
-- Installed Git and cloned the assignment repository from GitHub.
-- Created my own branch named `26065_mugabo_serge_assignment1`.
-- Wrote all Linux commands (relative and absolute paths) to answer the questions.
-- Documented my answers in `assignment1_answers.md`.
-- Prepared this README to summarize the process.
-- Pushed all my work to my personal branch.
-
----
----
+1. **Repository Cloning**: Cloned the repository from GitHub.
+2. **Branch Creation**: Created a new branch following the naming convention.
+3. **Command Documentation**: Documented all commands executed during the assignment in `commands.txt`.
+4. **Screenshot Capture**: Took screenshots of the output for each command and saved them in the `screenshots` directory.
+5. **Directory Structure Setup**: Created a directory structure for a web project as specified.
+6. **File Maintenance Tasks**: Automated tasks using `find` and `-exec`.
+7. **Backup Strategy Design**: Developed a backup rotation strategy for a production server.
 
 ## Why I Did It
-- To practice Linux filesystem navigation and understand how relative (`../`) and absolute (`/home/...`) paths diffe>- To learn how to copy files and directories correctly using Linux commands.
-- To apply Git skills by cloning, branching, and pushing code to the correct branch.
-- To show my understanding of Linux basics through structured documentation.
-
----
+This assignment was designed to enhance my understanding of Linux command-line operations, file system management, and scripting. It provided practical experience in navigating directories, manipulating files, and understanding system security and maintenance.
 
 ## What I Learned
-- The difference between **relative paths** (based on current directory) and **absolute paths** (starting from root >- How to copy a **directory itself (P3)** vs. **the contents inside a directory (files inside P3)**.
-- The meaning of Linux file colors: blue (directory), yellow (executable), green/white (normal files).
-- How to use Git in a professional workflow: clone → branch → add → commit → push.
+- Gained proficiency in using `git` for version control.
+- Improved my understanding of file permissions and ownership.
+- Learned how to create and manage complex directory structures efficiently.
+- Developed skills in using various Linux commands for file manipulation and system auditing.
+
+## Challenges and Recommendations
+- **Challenges**: 
+  - Understanding the nuances of file permissions and how they affect security.
+  - Managing multiple commands efficiently without causing errors.
+  
+- **Recommendations**: 
+  - Regular practice with Linux commands to build familiarity.
+  - Utilize scripts for repetitive tasks to save time and reduce errors.
+
+## Conclusion
+This assignment significantly contributed to my understanding of Linux systems. I am now more confident in my ability to navigate and manage files within a Linux environment.
 
 ---
+
