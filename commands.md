@@ -238,10 +238,10 @@ tar tzf corrupt.tar.gz || echo "Corrupt"  # Handle
 unzip -p test.zip | tar czf new.tar.gz -; tar xzf test.tar.gz -C temp; zip -r new.zip temp  # Merge example: pipe/extract to new
 t/l lists contents; x extracts matches; u adds; error on corrupt.
 ```
-![q12](./screenshots/Q12.png)
-![q12a](./screenshots/Q12A.png)
-![q12b](./screenshots/Q12B.png)
-![q12c](./screenshots/Q12C.png)
+![Q12](./screenshots/Q12.png)
+![Q12a](./screenshots/Q12A.png)
+![Q12b](./screenshots/Q12B.png)
+![Q12c](./screenshots/Q12C.png)
 
 ## Question 13
 
@@ -254,8 +254,8 @@ find . -name "daily_*" -mtime +7 -delete  # Cleanup old daily
 tar tzf backup_daily_*.tar.gz  # Verify integrity (or md5sum)
 Prevents conflicts via date stamps; restore: tar xzf specific.tar.gz. Metadata preserved with -a/-p.
 ```
-![q13](./screenshots/q13.png)
-![q13a](./screenshots/q13a.png)
+![Q13](./screenshots/q13.png)
+![Q13a](./screenshots/q13a.png)
 
 ## Question 14
 
