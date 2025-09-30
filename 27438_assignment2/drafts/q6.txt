@@ -1,0 +1,84 @@
+🔹 Part 1: Log files for every day of Q1 2024
+
+We need:
+
+January: 31 days
+
+February (2024 is a leap year): 29 days
+
+March: 31 days
+
+Efficient way (3 commands, avoids invalid dates):
+
+# January
+touch log_2024-01-{01..31}.txt
+
+# February (leap year, so 29 days)
+touch log_2024-02-{01..29}.txt
+
+# March
+touch log_2024-03-{01..31}.txt
+
+
+✅ Generates 91 files total (31 + 29 + 31).
+
+🔹 Part 2: Config files (3 services × 3 environments)
+
+Services = web, api, db
+Environments = dev, staging, production
+
+touch {web,api,db}.{dev,staging,production}.conf
+
+
+✅ Generates 9 files like:
+
+web.dev.conf
+web.staging.conf
+web.production.conf
+api.dev.conf ...
+db.production.conf
+
+🔹 Part 3: Test files (letters A–C × numbers 10–12 × suffixes input/output)
+
+That’s 3 × 3 × 2 = 18 files.
+
+touch {A,B,C}{10..12}.{input,output}
+
+
+✅ Generates:
+
+A10.input  A10.output  A11.input  A11.output ...  
+C12.input  C12.output
+
+📂 Example Resulting Tree
+
+After running all commands inside a folder (say q6):
+
+q6/
+├── log_2024-01-01.txt
+├── log_2024-01-02.txt
+...
+├── log_2024-03-31.txt
+├── web.dev.conf
+├── web.staging.conf
+├── web.production.conf
+├── api.dev.conf
+...
+├── db.production.conf
+├── A10.input
+├── A10.output
+...
+├── C12.input
+├── C12.output
+
+✅ Final Answer (efficient solution)
+# Logs (Jan, Feb, Mar 2024)
+touch log_2024-01-{01..31}.txt
+touch log_2024-02-{01..29}.txt
+touch log_2024-03-{01..31}.txt
+
+# Configs (3 services × 3 envs)
+touch {web,api,db}.{dev,staging,production}.conf
+
+# Test files (A–C × 10–12 × input/output)
+touch {A,B,C}{10..12}.{input,output}

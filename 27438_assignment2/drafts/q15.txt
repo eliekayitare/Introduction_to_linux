@@ -1,0 +1,31 @@
+Question 15: Investigation of Group Membership Propagation and Access Control
+What I Did
+I investigated how changes to group membership propagate to the current user session. This involved checking effective group memberships versus configured groups, demonstrating the requirement to re-login (or use newgrp) for changes to take effect, identifying which groups grant access to system logs, web server files, and administrative functions, and explaining the principle of least privilege in group assignments.
+
+Why I Did It
+Understanding group membership propagation is key to troubleshooting user access issues on Linux systems. Group memberships control resource access and privileges, so knowing how and when changes apply helps ensure proper permissions and security.
+
+What I Learned
+Current group memberships reflect what the session inherited at login; changes to groups require session restart or use of newgrp to be recognized.
+
+Specific groups like adm, sudo, and www-data grant access to sensitive system resources or elevated privileges.
+
+Improper group assignments can expose security risks.
+
+Challenges and Recommendations
+Users must log out and back in to apply group changes fully, which sometimes causes confusion.
+
+Monitoring group memberships and restricting group access according to job requirements is essential.
+
+The principle of least privilege reduces attack surfaces and accidental privilege escalations by limiting group memberships strictly to necessary roles.
+
+Document group memberships and audit frequently.
+
+Important Commands Used
+id and groups to view effective group memberships
+
+getent group to review group membership listings
+
+usermod -aG groupname username to add users to groups
+
+newgrp groupname to switch group in a session without logging out

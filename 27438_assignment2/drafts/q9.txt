@@ -1,0 +1,3 @@
+I generated a 250-line log file (biglog.txt) with periodic ERROR entries. Using sed, I extracted the middle 50 lines for focused troubleshooting. To find the last error, I used grep -n with tail to get the last match and sed to display 5 lines of context.
+I compared efficiency with time: cat reads the entire file (slower for huge files), while less loads pages on demand (better over SSH with limited bandwidth). For error filtering, grep -n allowed me to extract only relevant lines while preserving line numbers for reference.
+This demonstrates practical log analysis techniques and shows why less is superior to cat in remote troubleshooting.

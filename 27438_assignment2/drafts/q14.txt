@@ -1,0 +1,73 @@
+Question 14: Troubleshooting User Access Issues
+Step 1: Analyze Current User Context and Groups
+Run these commands:
+
+bash
+# Current user details
+whoami
+
+# Current user's groups
+groups
+
+# Another user's groups (e.g., user2)
+groups user2
+Compare group memberships to see differences in access rights.
+
+Step 2: Examine /etc/passwd for System vs Regular Users
+bash
+cat /etc/passwd
+System users usually:
+
+Have UIDs below 1000 (on many distros)
+
+Have no login shells (e.g., /sbin/nologin or /bin/false)
+
+Used for system services (e.g., daemon, bin, sys)
+
+Regular users usually:
+
+Have UIDs 1000 and above
+
+Have valid login shells (e.g., /bin/bash)
+
+Have home directories in /home
+
+Example:
+
+text
+root:x:0:0:root:/root:/bin/bash             # System user - root
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin  # System user
+alice:x:1001:1001:Alice:/home/alice:/bin/bash    # Regular user
+Step 3: Create Test Scenario and Compare Groups
+bash
+# Create a test regular user
+sudo useradd testuser -m -s /bin/bash
+
+# Check groups of testuser
+groups testuser
+
+# Try adding testuser to system groups like 'adm' or 'sys'
+sudo usermod -aG adm testuser
+
+# Verify access changes
+groups testuser
+Step 4: Potential Security Implications
+Regular users with system group memberships may gain unintended elevated privileges, risking:
+
+Access to system logs, sensitive files
+
+Ability to modify system services or binaries
+
+Bypass security policies or auditing
+
+Principle of least privilege must be enforced: users get only required access for their role.
+
+Summary
+System users differ from regular users by UID range, shell, and intended purpose.
+
+Group memberships control access; mixing system groups with regular users can be a vulnerability.
+
+Always verify user groups and apply least privilege principle.
+
+Use /etc/passwd, groups, and user management commands to audit and troubleshoot access issues.
+

@@ -1,0 +1,38 @@
+You can write:
+
+Move files ending in numbers:
+
+mv *[0-9].* archive/
+
+
+Matches filenames that end in a digit before the extension.
+
+Copy CSS except mobile/tablet:
+
+cp !(*mobile*|*tablet*).css desktop/
+
+
+Uses extglob negation to exclude unwanted files.
+
+List files with 3 characters before dot:
+
+ls ???.*
+
+
+Matches filenames like abc.txt.
+
+Find files starting with consonant:
+
+ls [!aeiouAEIOU]*
+
+
+Matches names not starting with vowels.
+
+Find files with 2-char extension:
+
+ls *.[[:alpha:]][[:alpha:]]
+
+
+Matches .sh, .js, .md but not .html.
+
+👉 This version is much shorter and efficient compared to egrep or multi-step find commands.

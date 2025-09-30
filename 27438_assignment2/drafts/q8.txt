@@ -1,0 +1,11 @@
+Larger than average size: useful to flag unusually large logs or dumps.
+
+Modified within last 72h but not 24h: captures files that may have been tampered with in a recent window.
+
+Empty/hidden-only directories: suspicious if attackers hide tools in “hidden-only” dirs.
+
+World-writable files: a major risk; any user can overwrite them.
+
+Owned by other users: can reveal files that shouldn’t belong to another account.
+
+Temporary/backup files: may contain sensitive data left unsecured.

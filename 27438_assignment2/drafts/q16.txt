@@ -1,0 +1,42 @@
+Question 16: Audit of Privilege Escalation Capabilities Using sudo
+What I Did
+I audited the current sudo permissions and restrictions for the user, demonstrating the behavioral differences between sudo -i, sudo su, and su -. I also showed how to execute commands as other users using sudo -u. Additionally, I analyzed login and sudo usage patterns from system logs and identified potential security concerns with overly permissive sudo configurations.
+
+Why I Did It
+Sudo is a critical tool for privilege escalation on Linux systems. Auditing sudo permissions and understanding their implications is essential for system security, preventing unauthorized access or privilege abuse. Understanding different sudo command options helps system administrators manage session environments properly.
+
+What I Learned
+sudo -i starts a root login shell with root environment variables, simulating an initial login.
+
+sudo su executes su as root, switching to root user but preserving some user environment.
+
+su - switches user to root with a login shell, requiring root password.
+
+Commands can be run as specific users using sudo -u username command.
+
+Login patterns and sudo usage should be monitored through system logs (/var/log/auth.log, journalctl).
+
+Overly broad sudoers configurations (e.g., NOPASSWD or ALL commands) pose risk.
+
+Limiting sudo privileges by command and requiring passwords enhance security.
+
+Challenges and Recommendations
+The default sudoers file often grants broad access; restricting to necessary commands reduces attack surface.
+
+Monitoring sudo logs regularly helps detect misuse.
+
+Enforce the principle of least privilege by giving users only needed sudo rights.
+
+Training users on using sudo properly reduces accidental security issues.
+
+Commands Used
+sudo -l — list allowed sudo commands for the user.
+
+sudo -i, sudo su, su - — compare root shell access methods.
+
+sudo -u <username> <command> — run command as another user.
+
+sudo cat /var/log/auth.log | grep sudo and journalctl _COMM=sudo — analyze sudo usage.
+
+sudo visudo — edit sudoers securely.
+

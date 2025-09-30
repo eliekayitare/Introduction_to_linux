@@ -1,0 +1,59 @@
+Question 11: Storage Space Compression Analysis
+What I Did
+I created two directories, one containing already compressed files (jpg, mp4, zip) and another containing uncompressed text files. I then created archives of each directory using four compression methods: tar+gzip, tar+bzip2, tar+xz, and zip. I measured the compression ratios and speeds for each method and analyzed which compressed better depending on the file types.
+
+Why I Did It
+This exercise helps to understand how different compression algorithms perform on different types of data (already compressed vs uncompressed) and to determine the best compression method for server backups, balancing speed and compression ratio.
+
+What I Learned
+Already compressed files do not compress further well; compression tools sometimes increase their size due to overhead.
+
+Text files compress well, with xz giving the best ratio but slower speed, gzip being the fastest but less compressive.
+
+zip is versatile and widely supported across platforms but is often outperformed by tar+gzip or tar+xz in Linux environments.
+
+Automated backups must consider data type when choosing compression to save time and storage.
+
+Challenges and Recommendations
+Measuring exact speeds and ratios requires careful timing and file size comparisons.
+
+For automated backups, gzip often offers the best balance of speed and compression.
+
+For more critical space savings and less frequent backups, xz is recommended.
+
+Avoid compressing already compressed archives like jpg or mp4 files to save CPU.
+
+Question 12: Archive Management on Undocumented System
+What I Did
+Using two sample archives (archive1.tar.gz and archive2.zip), I demonstrated how to:
+
+List archive contents safely without extraction
+
+Extract files matching specific patterns (e.g., .txt, .conf)
+
+Update existing archives without recreating them (only feasible for some types)
+
+Handle corrupted archives conceptually with repair commands
+
+Merge multiple archive contents into a new combined archive
+
+Why I Did It
+The goal was to understand how to efficiently manage archives when no prior documentation exists, which is common in inherited systems or during forensic investigations.
+
+What I Learned
+Different archive types have command-line utilities for safe inspection and selective extraction.
+
+Some archive formats (like zip) allow easy in-place updates, others (like compressed tar) typically require recreation.
+
+Repair tools exist for common archive types but aren't always guaranteed to recover all data.
+
+Merging archives effectively requires extraction then re-archiving.
+
+Challenges and Recommendations
+Handling corrupted archives is often case-specific and may require backup or forensic tools.
+
+Always list contents before extraction to avoid unexpected overwrites.
+
+Maintaining consistent archive naming and structure aids later management.
+
+For merged archives, careful extraction paths prevent overwriting.

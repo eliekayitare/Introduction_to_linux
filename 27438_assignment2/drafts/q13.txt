@@ -1,0 +1,75 @@
+Question 13: Backup Rotation Strategy for Production Server
+What I Did
+I designed and implemented a backup rotation system on a Linux server, incorporating daily incremental backups, weekly full backups, monthly full archives, and automatic cleanup of old backups. Each backup preserves metadata such as file permissions, ownership, and timestamps.
+
+Why I Did It
+A backup rotation strategy ensures minimal data loss and efficient use of storage by maintaining multiple restore points without overwhelming disk space. Incremental backups save only changes, speeding up daily backups, while periodic full backups ensure complete restoration capability.
+
+What I Learned
+How to create incremental backups using tar's snapshot feature to track changed files.
+
+The significance of full backups for restore point reliability.
+
+The importance of metadata preservation for file integrity on restoration.
+
+Automating backup schedules with cron and performing automatic cleanup to manage storage.
+
+Verifying backup integrity to prevent surprise failures during restore.
+
+Challenges and Recommendations
+Ensuring cron jobs execute reliably and handling failures gracefully are key to a robust system.
+
+Balancing backup frequency with available storage and server load is essential.
+
+Naming conventions were crucial to organize and avoid conflicts in backups.
+
+Backup verification helps detect corrupt archives early.
+
+Scripts Included
+daily_backup.sh: Creates daily incremental backups using tar with snapshot files, compressing data, and verifying integrity.
+
+weekly_backup.sh: Creates weekly full backups, compressed and ready for restoration.
+
+monthly_backup.sh: Creates monthly full backups for long-term storage.
+
+cleanup_backups.sh: Deletes backups older than 30 days to save disk space.
+
+Cron jobs schedule these scripts automatically.
+
+This structured approach to backups improves data safety and recovery readiness for critical production servers.
+
+Step 3: Weekly Full Backup Script
+bash
+#!/bin/bash
+backup_dir="/backup/weekly"
+src_dir="/important/data"
+date=$(date +'%Y-%m-%d')
+
+tar --create --gzip --listed-incremental=/dev/null --file=$backup_dir/backup-$date-full.tar.gz $src_dir
+Save as weekly_backup.sh and make executable.
+
+Step 4: Monthly Archival Backup Script
+bash
+#!/bin/bash
+backup_dir="/backup/monthly"
+src_dir="/important/data"
+date=$(date +'%Y-%m-01')
+
+tar --create --gzip --listed-incremental=/dev/null --file=$backup_dir/backup-$date-full.tar.gz $src_dir
+Save as monthly_backup.sh and make executable.
+
+Step 5: Automatic Cleanup of Old Backups (Older than 30 days)
+bash
+find /backup/* -type f -mtime +30 -name "*.tar.gz" -exec rm {} \;
+Run this as part of cron.
+
+Step 6: Verify Backup Integrity
+To test tar archive integrity:
+
+bash
+tar -tzf backup-yyyy-mm-dd-full.tar.gz > /dev/null
+if [ $? -eq 0 ]; then
+  echo "Backup is valid"
+else
+  echo "Backup is corrupted"
+fi

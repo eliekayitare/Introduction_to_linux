@@ -1,0 +1,6 @@
+I automated file maintenance with find -exec. 
+I first standardized permissions: all files to 644, but executables restored to 755.
+ To measure storage impact, I computed disk usage of files older than 30 days with find … | du -ch.
+  For configuration safety, I created .backup copies of *.conf files. 
+  To clean temporary files, I targeted files not accessed in 30+ days and used -ok for interactive safety before removal. I previewed dangerous operations with -print and -ls to confirm the target set before execution. This shows how to combine find with actions for safe system maintenance.
+

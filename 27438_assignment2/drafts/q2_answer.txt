@@ -1,0 +1,9 @@
+mkdir -p ~/projects/{client_work/{projectA/{src,docs,tests},projectB/{src,docs,tests}},personal/{experiments,portfolio},shared/{templates,assets}}
+
+This creates:
+- ~/projects/client_work/projectA/{src,docs,tests}
+- ~/projects/client_work/projectB/{src,docs,tests}
+- ~/projects/personal/experiments
+- ~/projects/personal/portfolio
+- ~/projects/shared/templates
+- ~/projects/shared/assets

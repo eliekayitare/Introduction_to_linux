@@ -1,0 +1,87 @@
+Question 17: Comprehensive Forensic Analysis Setup
+Step 1: Directory Structure for Different File Types
+bash
+mkdir -p forensic/{regular_files,directories,symbolic_links,hard_links,device_files,archives}
+
+# Regular files
+echo "Regular file 1 content" > forensic/regular_files/file1.txt
+echo "Regular file 2 content" > forensic/regular_files/file2.log
+
+# Directories
+mkdir forensic/directories/dir1
+mkdir forensic/directories/dir2
+
+# Symbolic links
+ln -s ../regular_files/file1.txt forensic/symbolic_links/symlink_to_file1
+
+# Hard links (must be on the same filesystem as original)
+ln forensic/regular_files/file2.log forensic/hard_links/hardlink_to_file2
+
+# Device files (requires sudo, create block and character devices, example)
+sudo mknod forensic/device_files/blockdev b 7 0    # loop device
+sudo mknod forensic/device_files/chardev c 1 3     # null device
+
+# Set permission examples
+chmod 4755 forensic/regular_files/file1.txt    # setuid
+chmod 2755 forensic/regular_files/file2.log    # setgid
+chmod 1777 forensic/directories/dir1            # sticky bit on directory
+Step 2: Setting Different Ownerships
+bash
+# Change ownership (use existing users or create dummy users)
+sudo chown root:root forensic/regular_files/file1.txt
+sudo chown nobody:nogroup forensic/regular_files/file2.log
+sudo chown $USER:$USER forensic/directories/dir2
+Step 3: Create Different Archives with Compression Methods
+bash
+cd forensic/regular_files
+
+# tar + gzip
+tar -czf ../archives/regular_files.tar.gz *
+
+# tar + bzip2
+tar -cjf ../archives/regular_files.tar.bz2 *
+
+# tar + xz
+tar -cJf ../archives/regular_files.tar.xz *
+
+# zip
+zip -r ../archives/regular_files.zip *
+Step 4: Commands to Analyze Each Element
+List file types with ls -l and file:
+
+bash
+ls -l forensic/*
+file forensic/regular_files/*
+Check symbolic links:
+
+bash
+ls -l forensic/symbolic_links
+readlink forensic/symbolic_links/symlink_to_file1
+Check device files:
+
+bash
+ls -l forensic/device_files
+file forensic/device_files/*
+Check permissions and special bits:
+
+bash
+ls -l --color=auto forensic/regular_files
+lsattr forensic/regular_files/*
+Check ownerships:
+
+bash
+ls -l forensic/regular_files
+stat forensic/regular_files/file1.txt
+Verify archives:
+
+bash
+tar -tf forensic/archives/regular_files.tar.gz
+unzip -l forensic/archives/regular_files.zip
+
+
+Commands Used
+Creation commands: mkdir, touch, ln, mknod, chmod, chown
+
+Analysis commands: ls -l, file, readlink, stat, tar, unzip
+
+Permission and metadata checks help in forensic investigation and monitoring.

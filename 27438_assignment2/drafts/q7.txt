@@ -1,0 +1,10 @@
+Although both files had the same visible text, they were treated differently because of line endings.
+
+diff reported every line as different, since it saw \n vs \r\n.
+
+cmp found the first differing byte position (extra \r in CRLF).
+
+comm considered the lines different entirely, since the hidden carriage return made the strings mismatch.
+
+Lesson: Cross-platform compatibility issues arise when files are edited across Linux and Windows.
+ Config files or scripts may break because of incorrect line endings. The safe practice is to normalize files using tools like dos2unix, unix2dos, or Git’s core.autocrlf setting.

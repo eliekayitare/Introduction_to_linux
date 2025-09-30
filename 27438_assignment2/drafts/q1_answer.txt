@@ -1,0 +1,15 @@
+Q1: Which directories might an attacker modify?
+- /etc    : system configuration files (passwd, sshd_config, cron jobs). Attackers change configs here.
+- /bin    : essential binaries (shells, coreutils) which if replaced can hide activity or run malicious code.
+- /usr    : userland programs; /usr/bin contains many user commands that could be swapped.
+- /var    : variable data, especially /var/log (intrusion evidence) and /var/spool, /var/tmp (persistence).
+- /tmp    : world-writable temp; used for uploads or transient scripts (persistence).
+- /opt    : third-party optional software — often used for vendor apps; attackers may drop tools here.
+- /boot   : kernel images and bootloader config; tampering here can persist across reboots.
+- /home   : user files and ssh keys; attackers place backdoors or harvest credentials.
+
+Reasoning: configuration files under /etc control services. Binaries in /bin and /usr/bin are executed by the system;
+replacing them provides stealth. Logs in /var/log reveal intrusion evidence; 
+/tmp is writable and convenient for attackers; /boot alters system startup; 
+user ssh keys and scripts live in /home.
+EOF
