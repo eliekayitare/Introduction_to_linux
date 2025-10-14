@@ -1,0 +1,125 @@
+assignment2.txt
+
+Q1: Investigating a Compromised System – Directory Analysis
+Directories analyzed: /bin, /etc, /var, /usr, /tmp, /opt, /boot, /home
+- /etc: Contains system configuration files. Attackers may modify passwd, shadow, or network configs.
+- /bin: Stores essential binaries. Replacing commands like ls or ps can hide attacker activity.
+- /var: Holds logs and variable data. Intrusion evidence may be found in /var/log/auth.log, etc.
+- /usr: Contains user-installed software and libraries. Targeted for persistence.
+- /tmp: Used for staging payloads due to write permissions.
+- /opt: Optional software. Vulnerable if misconfigured.
+- /boot: Kernel and bootloader files. Rarely targeted.
+- /home: User directories. Attackers may drop tools or hide data.
+
+Q2: Creating Nested Project Structure with Minimal Commands
+mkdir -p ~/projects/{client_work/web/{frontend,backend/database},mobile/{ios,android},personal/experiments,archive,shared/templates,resources}
+
+Q3: Efficient Navigation Between Project Subdirectories
+cd ~/projects/client_work/web/frontend
+cd ../../../personal/experiments
+pwd
+cd ../../shared/templates
+pwd
+cd ../../client_work/web/frontend
+pwd
+
+Q4: Realistic Web Project Structure Creation
+touch index.html about.html contact.html page_{001..012}.html
+touch main.css reset.css theme_{light,dark}.css {mobile,tablet,desktop,print}.css
+touch script.js util.js config.js script_util.js config_util.js util_script.js
+touch {a,b,c,d}{1..5}.{bak,tmp,old,backup}
+
+Q5: Wildcard Operations in a Cluttered Project Directory
+mkdir -p archive
+mv *[0-9]* archive/
+shopt -s extglob
+mkdir -p desktop
+cp !(mobile|tablet)*.css desktop/
+ls ???.*
+ls [b-df-hj-np-tv-z]* 2>/dev/null
+ls *.?? 2>/dev/null
+
+Q6: Batch File Creation Using Brace Expansion
+mkdir -p logs
+for month in {01..03}; do for day in {01..31}; do touch logs/log_2024-${month}-${day}.txt; done; done
+mkdir -p configs
+touch configs/{web,api,db}_{dev,staging,prod}.conf
+mkdir -p tests
+touch tests/{A,B,C}_{10..12}_{input,output}.txt
+
+Q7: Cross-Platform File Compatibility – Line Endings
+echo -e "Line one\nLine two\nLine three" > linux_file.txt
+unix2dos linux_file.txt > windows_file.txt
+diff linux_file.txt windows_file.txt
+cmp linux_file.txt windows_file.txt
+comm linux_file.txt windows_file.txt
+
+Q8: Security Audit – Locate Files with Specific Criteria
+mkdir -p audit_env/{empty_dir,hidden_only_dir,normal_dir}
+touch audit_env/normal_dir/file{1..5}.txt
+touch audit_env/normal_dir/.hidden{1..3}
+touch audit_env/normal_dir/temp_file.tmp
+touch audit_env/normal_dir/backup_file.bak
+dd if=/dev/zero of=audit_env/normal_dir/large_file.dat bs=1M count=5
+find audit_env/normal_dir -type f -size +1M
+find audit_env/normal_dir -type f -mtime -3 ! -mtime -1
+find audit_env -type d \( -empty -o -exec bash -c 'shopt -s dotglob; files=("$1"/*); [[ ${#files[@]} -eq 0 ]]' bash {} \; \)
+find audit_env -type f -perm -002
+find audit_env -type f ! -user ama ! -user root
+find audit_env -type f \( -name "*.tmp" -o -name "*.bak" -o -name "*~" \)
+
+Q9: Troubleshooting with Log File Analysis
+for i in {1..200}; do echo "Log entry $i: status=OK" >> biglog.txt; done
+sed -n '76,125p' biglog.txt
+grep -n "status=OK" biglog.txt | tail -1 | cut -d: -f1
+sed -n '195,205p' biglog.txt
+time cat biglog.txt > /dev/null
+time less biglog.txt
+time more biglog.txt
+grep -n "error" biglog.txt
+
+Q10: File Maintenance Automation with find -exec
+find . -type f ! -perm -111 -exec chmod 644 {} \;
+find . -type f -mtime +30 -exec du -ch {} + | grep total$
+find . -type f -name "*.conf" -exec cp {} {}.backup \;
+find . -type f -name "*.tmp" -atime +7 -exec echo rm {} \;
+
+Q11: Compression Strategy – Analyze Methods and Efficiency
+mkdir -p compression_test/{media,text}
+dd if=/dev/zero of=compression_test/media/sample.jpg bs=1M count=1
+dd if=/dev/zero of=compression_test/media/sample.mp4 bs=1M count=2
+touch compression_test/media/sample.zip
+echo "This is a sample text file." > compression_test/text/file1.txt
+yes "Repeated text line" | head -n 1000 > compression_test/text/file2.txt
+tar -czf text_tar_gz.tar.gz compression_test/text
+tar -cjf text_tar_bz2.tar.bz2 compression_test/text
+tar -cJf text_tar_xz.tar.xz compression_test/text
+zip -r text_zip.zip compression_test/text
+ls -lh text_tar_*.tar.* text_zip.zip
+time tar -czf test_speed.tar.gz compression_test/text
+
+Q12: Archive Operations – Examine, Extract, Update, and Merge
+tar -tf archive.tar
+unzip -l archive.zip
+gzip -l file.gz
+tar -xvf archive.tar --wildcards '*.conf'
+unzip archive.zip '*.txt'
+tar -rf archive.tar newfile.txt
+zip -u archive.zip newfile.txt
+zip -FF corrupted.zip --out recovered.zip
+tar -tvf corrupted.tar || echo "Archive may be corrupted"
+mkdir merge_temp
+tar -xf archive1.tar -C merge_temp
+unzip archive2.zip -d merge_temp
+cp archive3/*.gz merge_temp/
+tar -czf merged_archive.tar.gz -C merge_temp .
+
+Q13: Designing a Backup Rotation Strategy
+rsync -a --delete --backup --backup-dir=backups/daily/$(date +%F) /source_dir/ /mirror_dir/
+tar -czpf backups/weekly/week_$(date +%V).tar.gz /source_dir
+tar --preserve-permissions --preserve-order --same-owner -czpf backups/monthly/$(date +%Y-%m).tar.gz /source_dir
+find backups/daily -type d -mtime +30 -exec rm -r {} \;
+find backups/weekly -type f -mtime +90 -exec rm {} \;
+find backups/monthly -type f -mtime +365 -exec rm {} \;
+tar -tzf backups/monthly/$(date +%Y-%m).tar.gz > /dev/null
+tar -xvpf backups/monthly/2025-09.tar.gz -C /restore_dir
