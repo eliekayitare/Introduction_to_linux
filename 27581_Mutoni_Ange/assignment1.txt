@@ -1,0 +1,64 @@
+Name: Mutoni Ange
+ID: 27581
+
+Branch: 27581_mutoni_ange_assignment1
+
+
+Q1. If you are in the P3 directory, write the command to go to your home
+
+Relative path:
+cd ../../../../..
+
+Absolute path:
+cd /home/mcbishop
+
+
+Q2. Write the command to show a long listing of Here
+
+From Command directory (relative path):
+ls -l ../P1/P2/P3/Here
+
+Absolute path:
+ls -l /home/mcbishop/Practice/P1/P2/P3/Here
+
+
+Q3. Write the command to copy the file P3 to the Command directory
+
+From P2 (relative):
+cp -r P3 ../Command/
+
+From P3 (relative):
+cp -r . ../Command/
+
+From Command (relative):
+cp -r ../P1/P2/P3 .
+
+Absolute path:
+cp -r /home/mcbishop/Practice/P1/P2/P3 /home/mcbishop/Practice/Command/
+
+
+Q4. Write the command to copy the files in P3 to the Command directory
+
+From P2 (relative):
+cp P3/* ../Command/
+
+From P3 (relative):
+cp * ../Command/
+
+From Command (relative):
+cp ../P1/P2/P3/* .
+
+Absolute path:
+cp /home/mcbishop/Practice/P1/P2/P3/* /home/mcbishop/Practice/Command/
+
+
+Q5. What’s the difference between Q3 and Q4?
+
+- Q3 copies the entire directory P3 (including subfolders).
+- Q4 copies only the contents of P3 (the files), not the P3 folder itself.
+
+Q6. What do the colors mean?
+
+- Blue = Directories
+- Yellow = Executable files (e.g., info, Hello)
+- hereWeAre = Normal file (white), unless made executable (then green)
