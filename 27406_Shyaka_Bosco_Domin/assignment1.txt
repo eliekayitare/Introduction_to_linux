@@ -1,0 +1,27 @@
+Name: Shyaka Bosco Domin
+ID: 27406
+
+1) From P3 to home
+   - Relative: cd ../../../..
+   - Absolute: cd /home/shyaka
+
+2) Long listing of Here
+   - Relative: ls -l ../P1/Hi/P3/Here
+   - Absolute: ls -l /home/shyaka/Practice/P1/Hi/P3/Here
+
+3) Copy directory P3 into Command
+   - Relative: cp -r ../P1/Hi/P3 .
+   - Absolute: cp -r /home/shyaka/Practice/P1/Hi/P3 /home/shyaka/Practice/Command
+
+4) Copy files inside P3 into Command
+   - Relative: cp ../P1/Hi/P3/* .
+   - Absolute: cp /home/shyaka/Practice/P1/Hi/P3/* /home/shyaka/Practice/Command
+
+5) Difference between Q3 and Q4
+   - Q3 copies the whole P3 directory (so Command/P3 exists).
+   - Q4 copies only the files inside P3 directly into Command.
+
+6) Colors in the screenshot
+   - Blue = directories
+   - Yellow = files (e.g., Hello, info)
+   - hereWeAre should be yellow because it is a file.
