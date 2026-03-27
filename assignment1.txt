@@ -1,0 +1,84 @@
+Assignment 1 – Linux Basic Commands
+Student: Mahamat Adji Zezerti Abdramane
+ID: 25718
+
+---
+
+Q1: Go to your home directory from P3
+
+1. Relative path:
+Command: cd ../../..
+Expected Output: Navigates up three levels to root, then back to /home/ama
+
+2. Absolute path:
+Command: cd /home/ama
+Expected Output: Directly navigates to the home directory
+
+---
+
+Q2: Show a long listing of Here
+
+1. Relative path (from Command):
+Command: ls -l ../P3/Here
+Expected Output: Lists contents of the Here directory with details (permissions, size, date)
+
+2. Absolute path:
+Command: ls -l /home/ama/Practice/P3/Here
+Expected Output: Same as above using full path
+
+---
+
+Q3: Copy the file P3 to the Command directory
+
+1. From P2:
+Command: cp ../P3 ../Command
+Expected Output: Copies file P3 from parent into Command
+
+2. From P3:
+Command: cp P3 ../Command
+Expected Output: Copies file P3 from current directory into Command
+
+3. From Command:
+Command: cp ../P3 .
+Expected Output: Copies file P3 from parent into current directory
+
+4. Absolute path:
+Command: cp /home/ama/Practice/P3 /home/ama/Practice/Command
+Expected Output: Copies file P3 using full path
+
+---
+
+Q4: Copy the files inside P3 to the Command directory
+
+1. From P2:
+Command: cp ../P3/* ../Command
+Expected Output: Copies all files inside P3 into Command
+
+2. From P3:
+Command: cp * ../Command
+Expected Output: Copies all files from current directory into Command
+
+3. From Command:
+Command: cp ../P3/* .
+Expected Output: Copies all files from P3 into current directory
+
+4. Absolute path:
+Command: cp /home/ama/Practice/P3/* /home/ama/Practice/Command
+Expected Output: Copies all files from P3 to Command using full path
+
+---
+
+Q5: Difference between Q3 and Q4
+
+- Q3 copies the file or folder named P3 itself.
+- Q4 copies the contents inside the P3 folder.
+
+---
+
+Q6: Linux file color meanings
+
+Command: ls --color=auto
+Expected Output:
+- Blue: Directories
+- Yellow: Executable files
+- hereWeAre should be blue because it is a directory
